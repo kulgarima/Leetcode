@@ -1,0 +1,35 @@
+REMOVE DUPLICATE FROM SORTED ARRAY 
+-- IN PLACE : O(1) - space complexity meaning new list should not be created, should not use extra space 
+-- Bubble compare way can not be used as array should be sorted
+
+
+
+1. USING WHILE LOOP
+class Solution:
+    def removeDuplicates(self, nums):
+        N = len(nums)
+        if N<=1:
+            return N
+        
+        i = j = 1                    /j = last index to overwrite on & i = iterator
+        while i<N:
+            if nums[i]!= nums[i-1]:  /UNIQUE ELEMENT IS FOUND
+                nums[j] = nums[i]
+                j+=1
+            i+=1
+        return(j)
+        
+  2. USING FOR LOOP
+        class Solution:
+    def removeDuplicates(self, nums):
+        N = len(nums)
+        if N<=1:
+            return N
+        
+        x = 1
+        for i in range(N-1):
+            if(nums[i]!= nums[i+1]):
+                nums[x] = nums[i+1]
+                x+=1
+        return(x)
+        
