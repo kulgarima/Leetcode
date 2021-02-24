@@ -1,0 +1,11 @@
+Do not return anything, modify nums in-place instead.
+
+
+def moveZeroes(self, nums):
+        if nums and len(nums) > 1:
+            j = 0
+            for i in range(len(nums)):
+                if nums[i]:
+                    if not nums[j]: # check if necessary to swap
+                        nums[i], nums[j] = nums[j], nums[i]
+                    j += 1
