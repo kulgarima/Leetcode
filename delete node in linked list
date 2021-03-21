@@ -5,5 +5,5 @@
 
 class Solution:
     def deleteNode(self, node):
-        node.val = node.next.val
-        node.next = node.next.next
+        node.val = node.next.val          #making this node a copy of the next node
+        node.next = node.next.next        #creating copy of next one and skiping over next next one will get rid of next node
